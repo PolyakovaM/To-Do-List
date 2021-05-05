@@ -14,7 +14,6 @@ import {
 const ToDoListForm = ({
   startCase, 
   editListItem, 
-  index,
   newToDoList,
   deleteListItem
 }) => {
@@ -38,7 +37,7 @@ const ToDoListForm = ({
     } else {
       setEditMode(false)
       setItemValue(itemValue.trim())
-      editListItem(itemValue.trim(), index)
+      editListItem(itemValue.trim(), startCase)
     }
   }
 

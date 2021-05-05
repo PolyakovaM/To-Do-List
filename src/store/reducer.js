@@ -11,7 +11,7 @@ const appReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_CASE: 
       const newCaseObj = {
-        id: action.newCase,
+        // id: action.newCase,
         startCase: action.newCase
       }
       return {
@@ -28,7 +28,7 @@ const appReducer = (state = initialState, action) => {
       return {
         ...state,
         newToDoList: state.newToDoList.map(todo => {
-          if (todo.id === action.id) {
+          if (todo.startCase === action.newCase) {
             return {...todo, startCase: action.value}
           }
           return todo
@@ -53,10 +53,10 @@ export const deleteList = () => ({
   type: DELETE_LIST
 })
 
-export const editListItem = (value, id) => ({
+export const editListItem = (value, newCase) => ({
   type: EDIT_ITEM,
   value,
-  id
+  newCase
 })
 
 export const deleteListItem = payload => ({

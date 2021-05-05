@@ -32,8 +32,7 @@ const ToDo = ({
           <ToDoListForm
             newToDoList={newToDoList}
             editListItem={editListItem}
-            key={newThing.id + newThing.startCase}
-            index={newThing.id}
+            key={newThing.startCase}
             startCase={newThing.startCase}
             deleteListItem={deleteListItem}
           />
